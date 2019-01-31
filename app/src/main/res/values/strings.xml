@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Meri Library</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="log_in"><b>LOG IN</b></string>
+    <string name="sign_up"><b>SIGN UP</b></string>
+    <string name="register"><b>REGISTER</b></string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="skip">Skip</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="forget_password">Forget Password</string>
+
+    <string name="sem_one"><b>SEM I</b></string>
+    <string name="sem_two"><b>SEM II</b></string>
+    <string name="sem_three"><b>SEM III</b></string>
+    <string name="sem_four"><b>SEM IV</b></string>
+    <string name="sem_five"><b>SEM V</b></string>
+    <string name="sem_six"><b>SEM VI</b></string>
+
+    <string name="ele_one"><b>ELECTIVE I</b></string>
+    <string name="ele_two"><b>ELECTIVE II</b></string>
+    <string name="ele_three"><b>ELECTIVE III</b></string>
+    <string name="ele_four"><b>ELECTIVE IV</b></string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
