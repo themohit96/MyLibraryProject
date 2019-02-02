@@ -45,8 +45,8 @@ public class Tab2Data extends Fragment {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseApp firebaseApp=FirebaseApp.getInstance();
-                 mAuth = FirebaseAuth.getInstance(firebaseApp);
+            //    FirebaseApp firebaseApp=FirebaseApp.initializeApp(getActivity());
+            //     mAuth = FirebaseAuth.getInstance();
                 String email=mail.getEditText().getText().toString();
                 String pas1=pass.getEditText().getText().toString();
                 String pas2=cPass.getEditText().getText().toString();
@@ -65,7 +65,7 @@ public class Tab2Data extends Fragment {
                     cPass.setErrorEnabled(false);
                     Toast.makeText(getContext(),"You are registered!",Toast.LENGTH_LONG).show();
 
-                  /*  mAuth.createUserWithEmailAndPassword(email, pas1)
+                   /* mAuth.createUserWithEmailAndPassword(email, pas1)
                             .addOnCompleteListener(Tab2Data.this.getActivity(), new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {

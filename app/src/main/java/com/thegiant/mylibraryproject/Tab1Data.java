@@ -61,7 +61,7 @@ public class Tab1Data extends Fragment {
         forgetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(),"You forget password!",Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(),"You forget password!", Toast.LENGTH_LONG).show();
 
             }
         });
