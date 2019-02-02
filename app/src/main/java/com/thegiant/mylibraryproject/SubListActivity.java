@@ -16,8 +16,6 @@ public class SubListActivity extends AppCompatActivity {
     ArrayList<String> arrayList;
     ArrayList<String> arrayList2;
     ArrayList<String> arrayList3;
-    ArrayList<String> arrayList4;
-    ArrayList<String> arrayList5;
 
 
     @Override
@@ -27,19 +25,37 @@ public class SubListActivity extends AppCompatActivity {
         arrayList=new ArrayList<>();
         arrayList2=new ArrayList<>();
         arrayList3=new ArrayList<>();
-        arrayList4=new ArrayList<>();
-        arrayList5=new ArrayList<>();
-        arrayList.add("Subject 1");
-        arrayList2.add("A");
-        arrayList3.add("B");
-        arrayList4.add("C");
-        arrayList5.add("D");
+
+        arrayList.add("Unix & Shell Programming");
+        arrayList2.add("MCA-4001");
+        arrayList3.add("3");
+
+        arrayList.add("Design & Analysis of Algorithm");
+        arrayList2.add("MCA-4002");
+        arrayList3.add("4");
+
+        arrayList.add("Computer Networks");
+        arrayList2.add("MCA-4003");
+        arrayList3.add("4");
+
+        arrayList.add("Python Programming");
+        arrayList2.add("MCA-4005");
+        arrayList3.add("4");
+
+        arrayList.add("Information Retrieval Systems");
+        arrayList2.add("MCA-4021");
+        arrayList3.add("3");
+
+        arrayList.add("Mobile Application Development");
+        arrayList2.add("MCA-4044");
+        arrayList3.add("3");
+
 
 
         recyclerView=findViewById(R.id.rv_subjects);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        AdapterForTest adapterForTest=new AdapterForTest(arrayList,arrayList2,arrayList3,arrayList4,arrayList5);
+        AdapterForTest adapterForTest=new AdapterForTest(arrayList,arrayList2,arrayList3);
 
         recyclerView.setAdapter(adapterForTest);
 

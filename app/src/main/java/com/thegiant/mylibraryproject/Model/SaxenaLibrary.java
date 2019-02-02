@@ -1,4 +1,4 @@
-package com.thegiant.mylibraryproject;
+package com.thegiant.mylibraryproject.Model;
 
 public class SaxenaLibrary {
     public static  Boolean validateMail(String mail){

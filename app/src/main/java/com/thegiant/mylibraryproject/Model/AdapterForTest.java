@@ -18,16 +18,15 @@ import java.util.ArrayList;
 
 
 public class AdapterForTest extends RecyclerView.Adapter<AdapterForTest.ProgrammingViewHolder> {
-    ArrayList<String> arrayList,arrayList2,arrayList3,arrayList4,arrayList5;
+    ArrayList<String> arrayList,arrayList2,arrayList3;
 
 
 
-    public AdapterForTest(ArrayList<String> arrayList,ArrayList<String> arrayList2,ArrayList<String> arrayList3,ArrayList<String> arrayList4,ArrayList<String> arrayList5){
+    public AdapterForTest(ArrayList<String> arrayList,ArrayList<String> arrayList2,ArrayList<String> arrayList3){
         this.arrayList=arrayList;
         this.arrayList2=arrayList2;
         this.arrayList3=arrayList3;
-        this.arrayList4=arrayList4;
-        this.arrayList5=arrayList5;
+
     }
 
     @NonNull
@@ -40,18 +39,14 @@ public class AdapterForTest extends RecyclerView.Adapter<AdapterForTest.Programm
 
     @Override
     public void onBindViewHolder(@NonNull ProgrammingViewHolder holder, int position) {
-        String question,opt_a,opt_b,opt_c,opt_d;
-        question=arrayList.get(position);
-        opt_a=arrayList2.get(position);
-        opt_b=arrayList3.get(position);
-        opt_c=arrayList4.get(position);
-        opt_d=arrayList5.get(position);
+        String subName,subCode,subCredit;
+        subName=arrayList.get(position);
+        subCode=arrayList2.get(position);
+        subCredit=arrayList3.get(position);
 
-        holder.qName.setText(question);
-        holder.optionA.setText(opt_a);
-        holder.optionB.setText(opt_b);
-        holder.optionC.setText(opt_c);
-        holder.optionD.setText(opt_d);
+        holder.subName.setText(subName);
+        holder.subCode.setText(subCode);
+        holder.subCredit.setText(subCredit);
 
 
     }
@@ -62,31 +57,13 @@ public class AdapterForTest extends RecyclerView.Adapter<AdapterForTest.Programm
     }
 
     public class ProgrammingViewHolder extends RecyclerView.ViewHolder{
-        TextView qName;
-        RadioGroup group;
-        RadioButton radioButtonSelected;
-        int radiobuttonid;
-        RadioButton optionA,optionB,optionC,optionD;
+        TextView subName,subCode,subCredit;
 
         public ProgrammingViewHolder(View itemView) {
             super(itemView);
-            qName=itemView.findViewById(R.id.tvQuestion);
-            group=itemView.findViewById(R.id.optionGroup);
-            radiobuttonid=group.getCheckedRadioButtonId();
-            radioButtonSelected=itemView.findViewById(radiobuttonid);
-            optionA=itemView.findViewById(R.id.cbA);
-            optionB=itemView.findViewById(R.id.cbB);
-            optionC=itemView.findViewById(R.id.cbC);
-            optionD=itemView.findViewById(R.id.cbD);
-
-           // selectedOption=radioButtonSelected.getText().toString();
-
-           /*group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                    Log.d("Testing:---",selectedOption);
-                }
-            });*/
+            subName=itemView.findViewById(R.id.tv_sub_name);
+            subCode=itemView.findViewById(R.id.tvCode);
+            subCredit=itemView.findViewById(R.id.tvCredit);
 
 
         }
