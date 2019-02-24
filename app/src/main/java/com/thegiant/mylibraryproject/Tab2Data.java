@@ -2,6 +2,7 @@ package com.thegiant.mylibraryproject;
 
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,7 +11,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.thegiant.mylibraryproject.Model.SaxenaLibrary;
 
 
@@ -40,8 +45,7 @@ public class Tab2Data extends Fragment {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            //    FirebaseApp firebaseApp=FirebaseApp.initializeApp(getActivity());
-            //     mAuth = FirebaseAuth.getInstance();
+                mAuth = FirebaseAuth.getInstance();
                 String email=mail.getEditText().getText().toString();
                 String pas1=pass.getEditText().getText().toString();
                 String pas2=cPass.getEditText().getText().toString();
@@ -60,12 +64,15 @@ public class Tab2Data extends Fragment {
                     cPass.setErrorEnabled(false);
                     Toast.makeText(getContext(),"You are registered!",Toast.LENGTH_LONG).show();
 
-                   /* mAuth.createUserWithEmailAndPassword(email, pas1)
+                    mAuth.createUserWithEmailAndPassword(email, pas1)
                             .addOnCompleteListener(Tab2Data.this.getActivity(), new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isComplete()) {
 
+                                        mail.getEditText().setText("");
+                                        pass.getEditText().setText("");
+                                        cPass.getEditText().setText("");
                                         FirebaseUser user = mAuth.getCurrentUser();
                                         Toast.makeText(getActivity(), "You're signed in with "+user.getEmail()+" email id",
                                                 Toast.LENGTH_SHORT).show();
@@ -79,7 +86,7 @@ public class Tab2Data extends Fragment {
 
 
                                 }
-                            });*/
+                            });
 
 
 
