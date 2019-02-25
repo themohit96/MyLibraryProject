@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/trolly"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SubListActivity"></activity>
+        <activity android:name=".ForgetPassword"
+            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"></activity>
+        <activity android:name=".SubListActivity" />
         <activity android:name=".MainActivity" />
         <activity
             android:name=".WelcomeActivity"
