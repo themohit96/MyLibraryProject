@@ -8,6 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -28,13 +30,12 @@ public class SubListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub_list);
 
-
-
-
-
+        Animation bounceAnim= AnimationUtils.loadAnimation(this,R.anim.bounce);
 
         recyclerView=findViewById(R.id.rv_subjects);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerView.startAnimation(bounceAnim);
 
         AdapterForTest adapterForTest=new AdapterForTest(NameOfSubjects.subName,NameOfSubjects.subCode,NameOfSubjects.subCredit);
 
