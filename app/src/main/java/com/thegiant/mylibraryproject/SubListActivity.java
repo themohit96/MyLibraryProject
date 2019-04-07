@@ -43,8 +43,10 @@ public class SubListActivity extends AppCompatActivity {
         recyclerView.addOnItemTouchListener( new RecyclerItemClickListener(SubListActivity.this,
                 recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
             @Override public void onItemClick(View view, int position) {
-                Toast.makeText(SubListActivity.this, "click", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(SubListActivity.this,ShowBook.class));
+                String chooseSub=NameOfSubjects.subName.get(position).toString();
+                Intent intent=new Intent(SubListActivity.this,ShowBook.class);
+                intent.putExtra("SubName",chooseSub);
+                startActivity(intent);
 
             }
 

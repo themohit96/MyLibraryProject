@@ -30,4 +30,25 @@ public class SaxenaLibrary {
 
         return res;
     }
+
+    public static String SubSelector(String name){
+        String link="";
+        switch (name){
+            case "Unix & Shell Programming":
+                link="https://drive.google.com/open?id=1nOYgndKYQW0lG75r3nQjrWEcCTzR4vYo";
+                break;
+            case "Design & Analysis of Algorithm":
+                link="https://drive.google.com/open?id=1teEv2vMNxUt1kcoDLdXJyhUJ-RXkTfO8";
+                break;
+            case "Computer Networks":
+                link="https://drive.google.com/open?id=1Vp7bqbHZn-7FL5vjKN_vJEo765S1AmVK";
+                break;
+
+            case "Python Programming":
+                link="https://drive.google.com/open?id=1I8mlVZrvST1dBjBZzMBgqRTztj65RCA1";
+                break;
+        }
+
+        return link;
+    }
 }
