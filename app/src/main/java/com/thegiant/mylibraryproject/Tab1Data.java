@@ -69,6 +69,7 @@ public class Tab1Data extends Fragment {
         constraintLayout=rootView.findViewById(R.id.constraintLayout);
 
         Animation bounceAnim= AnimationUtils.loadAnimation(getContext(),R.anim.bounce);
+        final Animation fadeAnim=AnimationUtils.loadAnimation(getContext(),R.anim.sample_anim);
 
         constraintLayout.startAnimation(bounceAnim);
 
@@ -86,6 +87,8 @@ public class Tab1Data extends Fragment {
         logIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                logIn.startAnimation(fadeAnim);
 
                 String email=mail.getEditText().getText().toString();
                 String pas1=pass.getEditText().getText().toString();
@@ -127,6 +130,7 @@ public class Tab1Data extends Fragment {
         forgetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                forgetPassword.startAnimation(fadeAnim);
                 //Toast.makeText(getContext(),"You forget password!", Toast.LENGTH_LONG).show();
                 startActivity(new Intent(getContext(),ForgetPassword.class));
 
@@ -136,6 +140,7 @@ public class Tab1Data extends Fragment {
         fbLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fbLogin.startAnimation(fadeAnim);
                 Toast.makeText(getContext(),"Login from facebook!",Toast.LENGTH_LONG).show();
 
             }
@@ -144,6 +149,7 @@ public class Tab1Data extends Fragment {
         gmailLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                gmailLogin.startAnimation(fadeAnim);
                 SignInGoogle();
                 Toast.makeText(getContext(),"Login from gmail!",Toast.LENGTH_LONG).show();
 
@@ -153,6 +159,7 @@ public class Tab1Data extends Fragment {
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                skip.startAnimation(fadeAnim);
                 startActivity(new Intent(getContext(),SemChoiceActivity.class));
                 getActivity().finish();
 
