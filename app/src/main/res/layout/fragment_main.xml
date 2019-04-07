@@ -54,7 +54,8 @@
                     android:drawableStart="@android:drawable/ic_lock_idle_lock"
                     android:fontFamily="serif"
                     android:hint="@string/password"
-                    android:inputType="textPassword" />
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/colorPrimary" />
             </android.support.design.widget.TextInputLayout>
 
             <Button

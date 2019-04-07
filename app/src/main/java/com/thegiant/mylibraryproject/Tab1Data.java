@@ -4,6 +4,7 @@ package com.thegiant.mylibraryproject;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -11,6 +12,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,6 +49,8 @@ public class Tab1Data extends Fragment {
     private GoogleApiClient googleApiClient;
     GoogleSignInClient mGoogleSignInClient;
 
+    private ConstraintLayout constraintLayout;
+
 
 
 
@@ -61,6 +66,12 @@ public class Tab1Data extends Fragment {
         gmailLogin=rootView.findViewById(R.id.btnGmail);
         skip=rootView.findViewById(R.id.btnSkip);
         forgetPassword=rootView.findViewById(R.id.tvForget);
+        constraintLayout=rootView.findViewById(R.id.constraintLayout);
+
+        Animation bounceAnim= AnimationUtils.loadAnimation(getContext(),R.anim.bounce);
+
+        constraintLayout.startAnimation(bounceAnim);
+
 
        /* GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))

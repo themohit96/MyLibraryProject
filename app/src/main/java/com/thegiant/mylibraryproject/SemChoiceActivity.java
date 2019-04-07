@@ -3,7 +3,11 @@ package com.thegiant.mylibraryproject;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.DragEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.thegiant.mylibraryproject.Model.NameOfSubjects;
@@ -12,21 +16,43 @@ import java.util.ArrayList;
 
 public class SemChoiceActivity extends AppCompatActivity {
 
+    private LinearLayout layout,leftLayout,rightLayout;
+
     ArrayList<String> arrayList;
     ArrayList<String> arrayList2;
     ArrayList<String> arrayList3;
+    Animation blinkAnim;
+    private View tempView=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sem_choice);
 
+        layout=findViewById(R.id.linear_parent);
+        leftLayout=findViewById(R.id.linearLeft);
+        rightLayout=findViewById(R.id.linearRight);
+
+        Animation bounceAnim= AnimationUtils.loadAnimation(this,R.anim.bounce);
+        blinkAnim= AnimationUtils.loadAnimation(this,R.anim.blink_anim);
+        Animation lToRAnim= AnimationUtils.loadAnimation(this,R.anim.lefttoright);
+        Animation rToLceAnim= AnimationUtils.loadAnimation(this,R.anim.righttoleft);
+
+        layout.startAnimation(bounceAnim);
+        leftLayout.startAnimation(lToRAnim);
+        rightLayout.startAnimation(rToLceAnim);
+
+
+
 
     }
 
     public void onClick(View view){
 
+        view.startAnimation(blinkAnim);
+
         switch (view.getId()){
+
             case R.id.button11:
 
                 arrayList=new ArrayList<>();
@@ -57,9 +83,12 @@ public class SemChoiceActivity extends AppCompatActivity {
                 arrayList2.add("AHS-1002");
                 arrayList3.add("2");
                 startActivity(new Intent(SemChoiceActivity.this,SubListActivity.class));
+
+
                 break;
 
             case R.id.button12:
+
 
                 arrayList=new ArrayList<>();
                 arrayList2=new ArrayList<>();
@@ -291,6 +320,14 @@ public class SemChoiceActivity extends AppCompatActivity {
         NameOfSubjects.subName=arrayList;
         NameOfSubjects.subCode=arrayList2;
         NameOfSubjects.subCredit=arrayList3;
+
+        if(tempView!=null){
+            tempView.clearAnimation();
+        }
+
+        tempView=view;
+
+
 
     }
 }
