@@ -108,10 +108,10 @@ public class SaxenaLibrary {
                 link="https://drive.google.com/open?id=1WQ5IXtcRkNyT6S___IUoK32Cfnefd-IN";
                 break;
             case ".Net framework using C#":
-                link="";
+                link="https://drive.google.com/open?id=1mu6urMiGmZhE2b2c6MHiv2ktpLePgObw";
                 break;
             case "Technical Writing":
-                link="";
+                link="https://drive.google.com/open?id=1mu6urMiGmZhE2b2c6MHiv2ktpLePgObw";
                 break;
 
             case "Information Retrieval Systems":
