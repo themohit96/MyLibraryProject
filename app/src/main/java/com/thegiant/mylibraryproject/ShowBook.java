@@ -1,21 +1,14 @@
 package com.thegiant.mylibraryproject;
 
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebView;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.thegiant.mylibraryproject.Model.SaxenaLibrary;
-
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 
 public class ShowBook extends AppCompatActivity {
 

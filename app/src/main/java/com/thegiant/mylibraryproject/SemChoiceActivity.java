@@ -35,10 +35,10 @@ public class SemChoiceActivity extends AppCompatActivity {
 
         Animation bounceAnim= AnimationUtils.loadAnimation(this,R.anim.bounce);
         blinkAnim= AnimationUtils.loadAnimation(this,R.anim.blink_anim);
-        Animation lToRAnim= AnimationUtils.loadAnimation(this,R.anim.lefttoright);
-        Animation rToLceAnim= AnimationUtils.loadAnimation(this,R.anim.righttoleft);
+        Animation lToRAnim= AnimationUtils.loadAnimation(this,R.anim.slide_in_left);
+        Animation rToLceAnim= AnimationUtils.loadAnimation(this,R.anim.slide_in_right);
 
-        layout.startAnimation(bounceAnim);
+       // layout.startAnimation(bounceAnim);
         leftLayout.startAnimation(lToRAnim);
         rightLayout.startAnimation(rToLceAnim);
 

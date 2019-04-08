@@ -30,20 +30,22 @@ public class SubListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub_list);
 
-        Animation bounceAnim= AnimationUtils.loadAnimation(this,R.anim.bounce);
+        final Animation bounceAnim= AnimationUtils.loadAnimation(this,R.anim.bounce);
+        Animation buttonAnim= AnimationUtils.loadAnimation(this,R.anim.sample_anim);
 
         recyclerView=findViewById(R.id.rv_subjects);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerView.startAnimation(bounceAnim);
 
-        AdapterForTest adapterForTest=new AdapterForTest(NameOfSubjects.subName,NameOfSubjects.subCode,NameOfSubjects.subCredit);
+        AdapterForTest adapterForTest=new AdapterForTest(this,NameOfSubjects.subName,NameOfSubjects.subCode,NameOfSubjects.subCredit);
 
         recyclerView.setAdapter(adapterForTest);
 
         recyclerView.addOnItemTouchListener( new RecyclerItemClickListener(SubListActivity.this,
                 recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
             @Override public void onItemClick(View view, int position) {
+
                 String chooseSub=NameOfSubjects.subName.get(position).toString();
                 Intent intent=new Intent(SubListActivity.this,ShowBook.class);
                 intent.putExtra("SubName",chooseSub);
