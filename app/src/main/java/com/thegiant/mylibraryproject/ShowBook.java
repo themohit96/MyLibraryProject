@@ -5,7 +5,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.thegiant.mylibraryproject.Model.SaxenaLibrary;
@@ -17,6 +19,7 @@ public class ShowBook extends AppCompatActivity {
 
     private WebView webView;
     private String url="";
+    private String tempUrl="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,24 +36,29 @@ public class ShowBook extends AppCompatActivity {
         Intent intent=getIntent();
         url= SaxenaLibrary.SubSelector(intent.getStringExtra("SubName"));
         openWebPage(url);
+        finish();
 
 
         String drive="https://drive.google.com/open?id=1F6aK9fZPL95hdxgjtAo4DEg13BUx3vzM";
         String fire1="gs://mylibraryproject-ea010.appspot.com/FF.pdf";
         String fire2="https://firebasestorage.googleapis.com/v0/b/mylibraryproject-ea010.appspot.com/o/FF.pdf?alt=media&token=cae9607b-b75b-4e9a-a020-16f087e1d42f";
         final String test="http://drive.google.com/viewerng/viewer?embedded=true&url=";
+        String pdf="https://firebasestorage.googleapis.com/v0/b/mylibraryproject-ea010.appspot.com/o/FF.pdf?alt=media&token=ab1fc3d6-d511-41ae-8fa3-3f138f49545e";
 
 
 
-      /* ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+       /*ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
            @Override
            public void onSuccess(Uri uri) {
                //url=uri.getPath();
-               String tempUrl=uri.getPath();
-               openWebPage(tempUrl);
+               tempUrl=uri.getPath();
+             //  openWebPage(test+tempUrl);
+            //   webView.loadUrl(test+tempUrl);
                Toast.makeText(ShowBook.this,uri.toString(), Toast.LENGTH_LONG).show();
            }
-       });*/
+       });
+
+        webView.loadUrl(test+fire1);*/
 
        /* try {
             url= URLEncoder.encode(url,"UTF-8");
