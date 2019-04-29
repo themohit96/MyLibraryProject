@@ -2,6 +2,7 @@ package com.thegiant.mylibraryproject;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.DragEvent;
 import android.view.View;
@@ -10,8 +11,12 @@ import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.GenericTypeIndicator;
+import com.google.firebase.database.ValueEventListener;
 import com.thegiant.mylibraryproject.Model.NameOfSubjects;
 import com.thegiant.mylibraryproject.Model.SubjectsData;
 
@@ -61,11 +66,13 @@ public class SemChoiceActivity extends AppCompatActivity {
 
         view.startAnimation(blinkAnim);
 
+        String choice="";
+
         switch (view.getId()){
 
             case R.id.button11:
 
-                arrayList=new ArrayList<>();
+              /*  arrayList=new ArrayList<>();
                 arrayList2=new ArrayList<>();
                 arrayList3=new ArrayList<>();
 
@@ -91,11 +98,13 @@ public class SemChoiceActivity extends AppCompatActivity {
 
                 arrayList.add("Environmental Science");
                 arrayList2.add("AHS-1002");
-                arrayList3.add("2");
+                arrayList3.add("2");*/
 
-        //        databaseReference=firebaseDatabase.getReference().child("Sem One");
+              choice="Sem One";
 
-                startActivity(new Intent(SemChoiceActivity.this,SubListActivity.class));
+           //     databaseReference=firebaseDatabase.getReference().child("Sem One");
+
+           //     startActivity(new Intent(SemChoiceActivity.this,SubListActivity.class));
 
 
                 break;
@@ -103,7 +112,7 @@ public class SemChoiceActivity extends AppCompatActivity {
             case R.id.button12:
 
 
-                arrayList=new ArrayList<>();
+               /* arrayList=new ArrayList<>();
                 arrayList2=new ArrayList<>();
                 arrayList3=new ArrayList<>();
 
@@ -125,17 +134,19 @@ public class SemChoiceActivity extends AppCompatActivity {
 
                 arrayList.add("Accounting & Financial Management");
                 arrayList2.add("MBA-2008");
-                arrayList3.add("3");
+                arrayList3.add("3");*/
 
-        //        databaseReference=firebaseDatabase.getReference().child("Sem Two");
+               choice="Sem Two";
+
+            //    databaseReference=firebaseDatabase.getReference().child("Sem Two");
 
 
-                startActivity(new Intent(SemChoiceActivity.this,SubListActivity.class));
+            //    startActivity(new Intent(SemChoiceActivity.this,SubListActivity.class));
                 break;
 
             case R.id.button21:
 
-                arrayList=new ArrayList<>();
+              /*  arrayList=new ArrayList<>();
                 arrayList2=new ArrayList<>();
                 arrayList3=new ArrayList<>();
 
@@ -161,16 +172,18 @@ public class SemChoiceActivity extends AppCompatActivity {
 
                 arrayList.add("Ethics & Values");
                 arrayList2.add("AHE-3001");
-                arrayList3.add("2");
+                arrayList3.add("2");*/
 
-        //        databaseReference=firebaseDatabase.getReference().child("Sem Three");
+              choice="Sem Three";
+
+             //   databaseReference=firebaseDatabase.getReference().child("Sem Three");
 
 
-                startActivity(new Intent(SemChoiceActivity.this,SubListActivity.class));
+            //    startActivity(new Intent(SemChoiceActivity.this,SubListActivity.class));
                 break;
 
             case R.id.button22:
-                arrayList=new ArrayList<>();
+               /* arrayList=new ArrayList<>();
                 arrayList2=new ArrayList<>();
                 arrayList3=new ArrayList<>();
 
@@ -188,17 +201,19 @@ public class SemChoiceActivity extends AppCompatActivity {
 
                 arrayList.add("Python Programming");
                 arrayList2.add("MCA-4005");
-                arrayList3.add("3");
+                arrayList3.add("3");*/
 
-        //        databaseReference=firebaseDatabase.getReference().child("Sem Four");
+               choice="Sem Four";
+
+           //     databaseReference=firebaseDatabase.getReference().child("Sem Four");
 
 
-                startActivity(new Intent(SemChoiceActivity.this,SubListActivity.class));
+            //    startActivity(new Intent(SemChoiceActivity.this,SubListActivity.class));
                 break;
 
             case R.id.button31:
 
-                arrayList=new ArrayList<>();
+               /* arrayList=new ArrayList<>();
                 arrayList2=new ArrayList<>();
                 arrayList3=new ArrayList<>();
 
@@ -216,33 +231,37 @@ public class SemChoiceActivity extends AppCompatActivity {
 
                 arrayList.add("Technical Writing");
                 arrayList2.add("AHE-5001");
-                arrayList3.add("2");
+                arrayList3.add("2");*/
 
-        //        databaseReference=firebaseDatabase.getReference().child("Sem Five");
+               choice="Sem Five";
+
+            //    databaseReference=firebaseDatabase.getReference().child("Sem Five");
 
 
-                startActivity(new Intent(SemChoiceActivity.this,SubListActivity.class));
+            //    startActivity(new Intent(SemChoiceActivity.this,SubListActivity.class));
                 break;
 
             case R.id.button32:
 
-                arrayList=new ArrayList<>();
+            /*    arrayList=new ArrayList<>();
                 arrayList2=new ArrayList<>();
                 arrayList3=new ArrayList<>();
 
                 arrayList.add("Industrial Training");
                 arrayList2.add("MCA-6081");
-                arrayList3.add("26");
+                arrayList3.add("26");*/
 
-        //        databaseReference=firebaseDatabase.getReference().child("Sem Six");
+              choice="Sem Six";
+
+              //  databaseReference=firebaseDatabase.getReference().child("Sem Six");
 
 
-                startActivity(new Intent(SemChoiceActivity.this,SubListActivity.class));
+             //   startActivity(new Intent(SemChoiceActivity.this,SubListActivity.class));
                 break;
 
             case R.id.button41:
 
-                arrayList=new ArrayList<>();
+            /*    arrayList=new ArrayList<>();
                 arrayList2=new ArrayList<>();
                 arrayList3=new ArrayList<>();
 
@@ -260,17 +279,19 @@ public class SemChoiceActivity extends AppCompatActivity {
 
                 arrayList.add("Management Information System");
                 arrayList2.add("MCA-4024");
-                arrayList3.add("3");
+                arrayList3.add("3");*/
 
-      //          databaseReference=firebaseDatabase.getReference().child("Ele One");
+              choice="Ele One";
+
+              //  databaseReference=firebaseDatabase.getReference().child("Ele One");
 
 
-                startActivity(new Intent(SemChoiceActivity.this,SubListActivity.class));
+           //     startActivity(new Intent(SemChoiceActivity.this,SubListActivity.class));
                 break;
 
             case R.id.button42:
 
-                arrayList=new ArrayList<>();
+            /*    arrayList=new ArrayList<>();
                 arrayList2=new ArrayList<>();
                 arrayList3=new ArrayList<>();
 
@@ -288,17 +309,19 @@ public class SemChoiceActivity extends AppCompatActivity {
 
                 arrayList.add("Mobile Application Development");
                 arrayList2.add("MCA-4044");
-                arrayList3.add("3");
+                arrayList3.add("3");*/
 
-    //            databaseReference=firebaseDatabase.getReference().child("Ele Two");
+                choice="Ele Two";
+
+            //    databaseReference=firebaseDatabase.getReference().child("Ele Two");
 
 
-                startActivity(new Intent(SemChoiceActivity.this,SubListActivity.class));
+            //    startActivity(new Intent(SemChoiceActivity.this,SubListActivity.class));
                 break;
 
             case R.id.button51:
 
-                arrayList=new ArrayList<>();
+             /*   arrayList=new ArrayList<>();
                 arrayList2=new ArrayList<>();
                 arrayList3=new ArrayList<>();
 
@@ -316,16 +339,18 @@ public class SemChoiceActivity extends AppCompatActivity {
 
                 arrayList.add("Agile Software Development");
                 arrayList2.add("MCA-5024");
-                arrayList3.add("3");
+                arrayList3.add("3");*/
 
-   //             databaseReference=firebaseDatabase.getReference().child("Ele Three");
+                choice="Ele Three";
+
+            //    databaseReference=firebaseDatabase.getReference().child("Ele Three");
 
 
-                startActivity(new Intent(SemChoiceActivity.this,SubListActivity.class));
+           //     startActivity(new Intent(SemChoiceActivity.this,SubListActivity.class));
                 break;
 
             case R.id.button52:
-                arrayList=new ArrayList<>();
+            /*    arrayList=new ArrayList<>();
                 arrayList2=new ArrayList<>();
                 arrayList3=new ArrayList<>();
 
@@ -343,12 +368,13 @@ public class SemChoiceActivity extends AppCompatActivity {
 
                 arrayList.add("Business Intelligence");
                 arrayList2.add("MCA-5044");
-                arrayList3.add("3");
+                arrayList3.add("3");*/
+                choice="Ele Four";
 
-   //             databaseReference=firebaseDatabase.getReference().child("Ele Four");
+            //    databaseReference=firebaseDatabase.getReference().child("Ele Four");
 
 
-                startActivity(new Intent(SemChoiceActivity.this,SubListActivity.class));
+            //    startActivity(new Intent(SemChoiceActivity.this,SubListActivity.class));
                 break;
 
             default:
@@ -357,9 +383,32 @@ public class SemChoiceActivity extends AppCompatActivity {
 
         }
 
-        NameOfSubjects.subName=arrayList;
-        NameOfSubjects.subCode=arrayList2;
-        NameOfSubjects.subCredit=arrayList3;
+        databaseReference=firebaseDatabase.getReference().child(choice);
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+               /* SubjectsData subjectsData=dataSnapshot.getValue(SubjectsData.class);
+                NameOfSubjects.subName=subjectsData.SubjectName;
+                NameOfSubjects.subCode=subjectsData.SubjectCode;
+                NameOfSubjects.subCredit=subjectsData.SubjectCredit;*/
+               GenericTypeIndicator<ArrayList<String>> t = new GenericTypeIndicator<ArrayList<String>>() {};
+               NameOfSubjects.subName=dataSnapshot.child("SubjectName").getValue(t);
+               NameOfSubjects.subCode=dataSnapshot.child("SubjectCode").getValue(t);
+               NameOfSubjects.subCredit=dataSnapshot.child("SubjectCredit").getValue(t);
+                startActivity(new Intent(SemChoiceActivity.this,SubListActivity.class));
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(SemChoiceActivity.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+  //      NameOfSubjects.subName=arrayList;
+  //      NameOfSubjects.subCode=arrayList2;
+  //      NameOfSubjects.subCredit=arrayList3;
 //        SubjectsData subjectsData=new SubjectsData(arrayList,arrayList2,arrayList3);
 //        databaseReference.setValue(subjectsData);
 

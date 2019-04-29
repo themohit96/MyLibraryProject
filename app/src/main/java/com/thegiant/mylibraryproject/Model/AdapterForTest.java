@@ -18,15 +18,16 @@ import android.widget.Toast;
 import com.thegiant.mylibraryproject.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class AdapterForTest extends RecyclerView.Adapter<AdapterForTest.ProgrammingViewHolder> {
-    ArrayList<String> arrayList,arrayList2,arrayList3;
+    List arrayList,arrayList2,arrayList3;
     private int lastPosition=-1;
     private Context context;
 
 
-    public AdapterForTest(Context context,ArrayList<String> arrayList,ArrayList<String> arrayList2,ArrayList<String> arrayList3){
+    public AdapterForTest(Context context, List arrayList, List arrayList2, List arrayList3){
         this.arrayList=arrayList;
         this.arrayList2=arrayList2;
         this.arrayList3=arrayList3;
@@ -48,9 +49,9 @@ public class AdapterForTest extends RecyclerView.Adapter<AdapterForTest.Programm
 
         //setAnimation(holder.itemView, position);
 
-        subName=arrayList.get(position);
-        subCode=arrayList2.get(position);
-        subCredit=arrayList3.get(position);
+        subName=arrayList.get(position).toString();
+        subCode=arrayList2.get(position).toString();
+        subCredit=arrayList3.get(position).toString();
 
         holder.subName.setText(subName);
         holder.subCode.setText(subCode);

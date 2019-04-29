@@ -1,11 +1,12 @@
 package com.thegiant.mylibraryproject.Model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class NameOfSubjects {
-    public static ArrayList subName=new ArrayList();
-    public static ArrayList subCode=new ArrayList();
-    public static ArrayList subCredit=new ArrayList();
+    public static List subName=new ArrayList<String>();
+    public static List subCode=new ArrayList<String>();
+    public static List subCredit=new ArrayList<String>();
 
     /*public NameOfSubjects(){
         subName=new ArrayList();
